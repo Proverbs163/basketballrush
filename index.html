@@ -680,6 +680,27 @@
         .share-btn:hover {
             background: #333;
         }
+
+        .more-text {
+        display: none;
+        }
+
+        .copy-btn {
+        margin-top: 10px;
+        background: #333;
+        color: #fff;
+        border: none;
+        padding: 8px 12px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 14px;
+        }
+        .copy-btn:hover {
+        background: #000;
+        }
+        
+
+        
     </style>
 </head>
 <body>
@@ -767,6 +788,35 @@
                                 <a href="#" class="read-more" onclick="showArticle('rookie-of-year-2024')">Read More →</a>
                             </div>
                         </article>
+
+                          <!-- ----------------------------- -->
+
+<article class="article-card">
+  <div class="article-image">
+    <span>Featured Image</span>
+  </div>
+  <div class="article-content">
+    <h3 class="article-title">🚨 Warriors Expected to Sign Seth Curry, Reuniting Him with Stephen Curry</h3>
+    <div class="article-meta">
+      <span>September 23,2025</span> • <span>Basketball News</span>
+    </div>
+    <p class="article-excerpt">
+      The Golden State Warriors are making headlines once again. According to NBA insider Marc Stein, the team is expected to sign free agent guard Seth Curry, potentially reuniting him with his brother Stephen Curry for the first time in their NBA careers. 🤯
+      <span class="dots">...</span>
+      <span class="more-text">
+        <!-- hidden long text -->
+      </span>
+    </p>
+
+    <a href="javascript:void(0);" class="read-more" onclick="toggleReadMore(this)">Read More →</a>
+
+    <!-- 🔹 Copy Link Button -->
+    <button class="copy-btn" onclick="copyLink('https://basketballrush.netlify.app/articles/seth-curry')">
+      📋 Copy Link
+    </button>
+  </div>
+</article>
+<!-- -------------------------------------------- -->
 
                         <article class="article-card">
                             <div class="article-image">
@@ -1387,6 +1437,34 @@
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
         gtag('config', 'YOUR_GA_ID');
+
+                // read MORE....
+        function toggleReadMore(btn) {
+  const excerpt = btn.previousElementSibling;
+  const dots = excerpt.querySelector(".dots");
+  const moreText = excerpt.querySelector(".more-text");
+
+  if (moreText.style.display === "none") {
+    moreText.style.display = "inline";
+    dots.style.display = "none";
+    btn.textContent = "Read Less ←";
+  } else {
+    moreText.style.display = "none";
+    dots.style.display = "inline";
+    btn.textContent = "Read More →";
+  }
+}
+
+    // copy link
+
+    function copyLink(url) {
+  navigator.clipboard.writeText(url).then(() => {
+    alert("✅ Link copied to clipboard!");
+  }).catch(err => {
+    console.error("Failed to copy link: ", err);
+  });
+}
+        
     </script>
 
     <!-- Google Analytics (replace YOUR_GA_ID) -->
