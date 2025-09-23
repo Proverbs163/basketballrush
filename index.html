@@ -699,6 +699,20 @@
         background: #000;
         }
         
+                /* size */
+        .article-image {
+          width: 100%;
+          aspect-ratio: 16/9; /* keeps landscape ratio */
+          overflow: hidden;
+          border-radius: 10px; /* optional rounded corners */
+        }
+        
+        .article-image img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover; /* ensures it fills the box without stretching */
+          display: block;
+        }
 
         
     </style>
@@ -760,7 +774,7 @@
 
 <article class="article-card" id="seth-curry-signing">
   <div class="article-image">
-    <span>Featured Image</span>
+    <img src="images/sethcurrytoWarriors.jpg" alt="Seth Curry signing with Warriors" />
   </div>
   <div class="article-content">
     <h3 class="article-title">🚨 Warriors Expected to Sign Seth Curry, Reuniting Him with Stephen Curry</h3>
